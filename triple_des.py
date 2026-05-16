@@ -17,8 +17,8 @@ def triple_des_decryption(cipher_bits, key1_bits, key2_bits, key3_bits):
     key2 = generate_keys(key2_bits)
     key3 = generate_keys(key3_bits)
 
-    desd1 = des_decrypt(cipher_bits, key1)
+    desd1 = des_decrypt(cipher_bits, key3)
     desd2 = des_decrypt(desd1, key2)
-    desd3 = des_decrypt(desd2, key3)
+    desd3 = des_decrypt(desd2, key1)
 
     return desd3

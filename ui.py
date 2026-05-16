@@ -17,7 +17,7 @@ from triple_des import (
 )
 
 
-# ---------------- WINDOW ---------------- #
+# WINDOW 
 
 root = tk.Tk()
 
@@ -30,7 +30,7 @@ root.config(bg="#0F172A")
 root.resizable(False, False)
 
 
-# ---------------- COLORS ---------------- #
+# COLORS
 
 BG_COLOR = "#0F172A"
 CARD_COLOR = "#1E293B"
@@ -40,7 +40,7 @@ BUTTON_COLOR = "#3B82F6"
 BUTTON_HOVER = "#2563EB"
 
 
-# ---------------- MAIN FRAME ---------------- #
+# MAIN FRAME
 
 main_frame = tk.Frame(
     root,
@@ -52,7 +52,7 @@ main_frame = tk.Frame(
 main_frame.place(relx=0.5, rely=0.5, anchor="center")
 
 
-# ---------------- TITLE ---------------- #
+#TITLE
 
 title = tk.Label(
     main_frame,
@@ -65,7 +65,7 @@ title = tk.Label(
 title.pack(pady=(0, 25))
 
 
-# ---------------- INPUT FUNCTION ---------------- #
+# INPUT FUNCTION
 
 def create_input(label_text, hide=False):
 
@@ -108,7 +108,7 @@ def create_input(label_text, hide=False):
     return entry
 
 
-# ---------------- INPUTS ---------------- #
+# INPUTS
 
 plaintext_entry = create_input(
     "Plaintext (8 Characters)"
@@ -130,7 +130,7 @@ key3_entry = create_input(
 )
 
 
-# ---------------- OUTPUT BOX ---------------- #
+# OUTPUT BOX
 
 output_label = tk.Label(
     main_frame,
@@ -158,12 +158,12 @@ output_box = tk.Text(
 output_box.pack()
 
 
-# ---------------- GLOBAL CIPHER ---------------- #
+# GLOBAL CIPHER
 
 cipher_hex = ""
 
 
-# ---------------- ENCRYPT FUNCTION ---------------- #
+# ENCRYPT FUNCTION
 
 def encrypt_text():
 
@@ -237,7 +237,7 @@ def encrypt_text():
         )
 
 
-# ---------------- DECRYPT FUNCTION ---------------- #
+# DECRYPT FUNCTION
 
 def decrypt_text():
 
@@ -281,7 +281,7 @@ def decrypt_text():
     )
 
 
-# ---------------- COPY FUNCTION ---------------- #
+# COPY FUNCTION
 
 def copy_ciphertext():
 
@@ -304,7 +304,7 @@ def copy_ciphertext():
     )
 
 
-# ---------------- BUTTON STYLE ---------------- #
+# BUTTON STYLE
 
 def create_button(text, command):
 
@@ -326,7 +326,7 @@ def create_button(text, command):
     return btn
 
 
-# ---------------- BUTTON FRAME ---------------- #
+# BUTTON FRAME 
 
 button_frame = tk.Frame(
     main_frame,
@@ -360,6 +360,6 @@ copy_btn = create_button(
 copy_btn.grid(row=0, column=2, padx=10)
 
 
-# ---------------- RUN APP ---------------- #
+# RUN APP
 
 root.mainloop()

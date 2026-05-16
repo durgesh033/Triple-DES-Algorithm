@@ -61,12 +61,10 @@ def bitlist_to_hex(bits):
 # Convert hexadecimal to bit list
 def hex_to_bitlist(hex_string):
 
-    binary_string = bin(
-        int(hex_string, 16)
-    )[2:]
-
-    # Pad to multiple of 64 bits
-    while len(binary_string) % 64 != 0:
-        binary_string = '0' + binary_string
+    # Convert each hex digit to 4-bit binary
+    binary_string = ''.join(
+        format(int(char, 16), '04b')
+        for char in hex_string
+    )
 
     return [int(bit) for bit in binary_string]
