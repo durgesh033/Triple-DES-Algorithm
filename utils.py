@@ -28,21 +28,28 @@ def string_to_bitlist(text):
 
 def bitlist_to_string(bits):
 
-    chars = []
+    text = ""
 
     #Process every 8 bits
     for i in range(0, len(bits), 8):
         byte = bits[i:i + 8]
 
-        #Convert bits to character
-        chars.append(chr(int(''.join(map(str, byte)), 2)))
+        if (len(byte) < 8):
+            continue
 
-    return ''.join(chars)
+        #Convert bits to character
+        binary = ''.join(map(str, byte))
+        text += chr(int(binary, 2))
+
+    return text
 
 # Convert bit list to hexadecimal
 def bitlist_to_hex(bits):
 
     binary_string = ''.join(map(str, bits))
+
+    while(len(binary_string) % 4 != 0):
+        binary_string = '0' + binary_string
 
     hex_string = hex(
         int(binary_string, 2)
